@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  background-color: #1e1b3217;
+  height: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap');
+.video-detail{
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+}

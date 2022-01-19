@@ -3,7 +3,10 @@ import SearchBar from './components/SearchBar';
 import youtube from './apis/youtube';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
-
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import { MDBBtn  } from 'mdb-react-ui-kit';
+import "bootstrap/dist/css/bootstrap.css";
+import './App.css';
 class App extends React.Component {
     state = {
         videos: [],
@@ -25,17 +28,20 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className='ui container' style={{marginTop: '1em'}}>
+            <div className='container' style={{height:896}} >
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid'>
+                <div className='ui grid '>
+
                     <div className="ui row">
-                        <div className="eleven wide column">
+                        <div className="video-detail">
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
-                        <div className="five wide column">
+                        <div className="video-list" style={{backgroundColor:'#ebeaed'}}>
                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
+                        
                     </div>
+                    <MDBBtn style={{float:'right'}} color='#ff0303' rounded>ATRÁS</MDBBtn>
                 </div>
             </div>
         )
