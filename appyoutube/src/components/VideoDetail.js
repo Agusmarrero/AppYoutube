@@ -1,21 +1,32 @@
 import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-const VideoDetail = ({video}) => {
-    if (!video) {
-        return <div style={{marginTop:10}}><img src="https://i.ibb.co/2cqwvsS/VIDEO.png" alt="VIDEO" border="0"></img></div>;
+import Footer from './Footer';
+import InitialVideo from './InitialVideo';
+import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom'
+const VideoDetail = ({ video }) => {
+    console.log(video)
+    if (video.length === 0) {
+        console.log('no tiene')
+        return <InitialVideo />;
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
-    console.log(typeof(video));
+    // console.log(video)
+
+    console.log(typeof (video));
     return (
         <div>
-            <div className='embed'>
-                <iframe src={videoSrc} allowFullScreen title='Video player'/>
-            </div>
-            <div className='segment'>
-                <h4 className='header'>{video.snippet.title}</h4>
-                <p>{video.snippet.description}</p>
-            </div>
+            {/* <Link to={`/video/${video.id.videoId}`}> */}
+                <div className='embed'>
+                    <iframe src={videoSrc} allowFullScreen title='Video player' />
+                </div>
+                <div className='segment'>
+                    <h4 className='header'>{video.snippet.title}</h4>
+                    <p>{video.snippet.description}</p>
+                </div>
+                {/* <Footer /> */}
+            {/* </Link> */}
         </div>
 
     )

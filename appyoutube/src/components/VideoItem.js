@@ -1,6 +1,7 @@
 import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import './VideoItem.css';
+import Footer from './Footer';
 const VideoItem = ({video , handleVideoSelect}) => {
     return (
         <div onClick={ () => handleVideoSelect(video)} className=' video-item item'>
@@ -8,7 +9,7 @@ const VideoItem = ({video , handleVideoSelect}) => {
             <div className='content'>
                 <div className='card-title '>{video.snippet.title}</div>
             </div>
-            
+           
         </div>
     )
 };

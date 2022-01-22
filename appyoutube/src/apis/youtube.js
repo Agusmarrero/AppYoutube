@@ -1,5 +1,5 @@
 import axios from 'axios';
-const KEY = 'AIzaSyBYKWqwzprDHWIDLSN-NbK_ZqQ2JDXZW8M';
+const KEY = 'AIzaSyC7FFOvav1EL9zXWfBlNMy-SehB4ebseXQ';
 
 //AXIOS: Libreria que me permite hacer operaciones como cliente HTTP. Hacemos solicitudes a un servidor y recibimos respuestas fáciles. 
 export default axios.create({
