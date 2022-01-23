@@ -2,7 +2,6 @@ import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import Footer from './Footer';
 import '../App.css'
-import SearchBar from './SearchBar';
 const InitialVideo = () => {
   
     return (

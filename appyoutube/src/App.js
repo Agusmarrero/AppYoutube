@@ -5,21 +5,26 @@ import "bootstrap/dist/css/bootstrap.css";
 import Home from './components/Home';
 import './App.css';
 import InitialVideo from './components/InitialVideo';
-import Prueba from './components/Prueba';
-class App extends React.Component {
+import VideoItem from './components/VideoItem';
+import VideoDetail from './components/VideoDetail';
+import VideoContextProvider, {useVideoContext} from "./context/context"
 
-    
-    
-    render() {
+function App() {
+
+    const {videoItem} = useVideoContext()
+    console.log(videoItem)
+  
         return (
             <div>
-                <Routes>
-                    <Route path="/" element={<Prueba />} />
-                    <Route path="/InitialVideo" element={<Home />} />
-                </Routes>
+                <VideoContextProvider>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/video/:id" element={<VideoDetail video={videoItem}  />} />
+                    </Routes>
+                </VideoContextProvider>
             </div>
         )
-    }
+    
 }
 
 export default App;

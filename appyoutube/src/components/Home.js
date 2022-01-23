@@ -1,62 +1,66 @@
-import React from 'react';
-import SearchBar from './SearchBar';
-import youtube from '../apis/youtube';
+import React, { useState } from 'react';
+import { useVideoContext } from "../context/context"
 import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
-import { Route, BrowserRouter, Routes ,Link } from 'react-router-dom'
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import "bootstrap/dist/css/bootstrap.css";
-import '../App.css';
 import Footer from './Footer';
-import { useState } from 'react'
+import VideoDetail from './VideoDetail';
+import InitialVideo from './InitialVideo';
+import youtube from '../apis/youtube';
+import SearchBar from './SearchBar';
+const Home = () => {
+    
+    const [video, setVideo] = useState([])
+    const [videoSearch, setVideoSearch] = useState([])
+    const { videosList, videoItem, videosSearch , videoSelect, emptyVideo, backButton} = useVideoContext()
 
-
-
-class Home extends React.Component {
-    state = {
-        videos: [],
-        selectedVideo: null
-    }
-
-  
-    handleSubmit = async (termFromSearchBar) => {
-        const response = await youtube.get('/search', {
+    // console.log(videosList)
+    const handleSearch = async (termFromSearchBar) => {
+        
+        const response =  await youtube.get('/search', {
             params: {
                 q: termFromSearchBar
             }
         })
-        this.setState({
-            videos: response.data.items
-        })
-    };
-
-    handleVideoSelect = (video) => {
-      
-        this.setState({ selectedVideo: video })
-        console.log(JSON.stringify(video));
+        
+        videosSearch(response.data.items)
     }
+
+    // const [count, setCount] = useState(0)
+
+    // useEffect(() => {
+    //     console.log(count)
+    // })
+
+    console.log(videosList)
     
-    render() {
-        return (
-            <div>
-                <div className='container' style={{ height: 600 }} >
-                    <SearchBar handleFormSubmit={this.handleSubmit} />
-                    <div className='ui grid '>
-                        <div className="ui row">
-                            <div className="video-detail">
-                                <VideoDetail video={this.state.selectedVideo} />
-                            </div>
-                            <div className="video-list" style={{ backgroundColor: '#ebeaed' }}>
-                                <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />
-                            </div>
+
+    const handleVideoSelect = (video) => {
+
+        videoSelect(video)
+    
+      
+    }
+
+
+    
+
+    return (
+        <div>
+            <div className='container' style={{ height: 600 }} >
+                <SearchBar handleSearch={handleSearch} />
+                <div className='ui grid '>
+                    <div className="ui row">
+                        <div className="video-detail">
+                            {videoItem.length !== 0 ? <VideoDetail video={videoItem}/> : <InitialVideo/>} 
+                        </div>
+                        <div className="video-list" style={{ backgroundColor: '#ebeaed' }}>
+                           {backButton ?  '' : <VideoList handleVideoSelect={handleVideoSelect} videos={videosList}  /> }
                         </div>
                     </div>
                 </div>
-                <Footer ></Footer>
-            </div>
-
-        )
-    }
+             </div>
+            {/* <Footer /> */} 
+        </div>
+    )
 }
 
 export default Home;
