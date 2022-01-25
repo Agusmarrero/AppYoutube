@@ -45,10 +45,10 @@ const Home = () => {
                 <SearchBar handleSearch={handleSearch} />
             </div>
             <div className='body'>
-            <div className="row">
-                {videoItem.length !== 0 ? <VideoDetail video={videoItem} /> : <InitialVideo />}
-                {backButton ? '' : <div className='col-3 col-s-12 col-c-12 col-x-3'><VideoList handleVideoSelect={handleVideoSelect} videos={videosList} /></div>}
-            </div>
+                <div className="row" >
+                    {videoItem.length !== 0 ? <VideoDetail video={videoItem}/> : <InitialVideo />}
+                    {backButton ? '' : <div className='col-3 col-s-12 col-c-12 col-x-3'><VideoList handleVideoSelect={handleVideoSelect} videos={videosList} /></div>}
+                </div>
             </div>
           
             <Footer />

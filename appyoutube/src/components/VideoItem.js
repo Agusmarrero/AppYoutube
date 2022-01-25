@@ -13,6 +13,7 @@ const VideoItem = ({ v1, handleVideoSelect }) => {
     const handleDetail = () => {
         setDescription(v1.snippet.description)
         setSelect(!select)
+        
     }
 
 

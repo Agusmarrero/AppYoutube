@@ -16,8 +16,7 @@ function VideoContextProvider({ children }) {
         
         setVideoItem(item)
         setCount(count + 1)
-        console.log(count)
-        console.log('Item Video ' + JSON.stringify(item))
+        setBackButton(false)
     }
 
     const emptyVideo = () => {
@@ -36,6 +35,8 @@ function VideoContextProvider({ children }) {
 
     const notVideosList = () => {
         setBackButton(true)
+        
+        
     }
 
 

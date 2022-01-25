@@ -7,13 +7,12 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
 
-    const { count, notVideosList } = useVideoContext()
+    const { count } = useVideoContext()
 
     return (
         <Link to="/">
             <div className='footer'>
                 <label className='text-secondary'>CANTIDAD DE REPRODUCCIONES: {count}</label>
-                <MDBBtn size="sm" style={{ float: 'right', backgroundColor: 'white', marginTop: 3, marginRight: 16 }} onClick={() => notVideosList()} color='#ff0303' rounded>ATRÁS</MDBBtn>
             </div>
         </Link>
     )
