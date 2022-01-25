@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import './VideoItem.css';
 import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import { MDBBtn } from 'mdb-react-ui-kit';
 import Footer from './Footer';
 
 
@@ -31,7 +33,10 @@ const VideoItem = ({v1 , handleVideoSelect}) => {
             </div>
            
         </Link>
-        {select ?  <button onClick={() => handleDetail()}>esconder</button> :  <button onClick={() => handleDetail()}>detalle</button> }
+        {select ? 
+            <Button size="sm" onClick={() => handleDetail()} variant="outline-secondary" >ESCONDER</Button>
+         : <Button size="sm" onClick={() => handleDetail()}variant="outline-danger">DETALLES</Button>}
+         
        
         </>
     )

@@ -5,13 +5,11 @@ const SearchBar = ({handleSearch}) => {
     const [search, setSearch] = useState([])
 
     const handleSubmit = (event) => {
-        console.log(search)
         event.preventDefault(); 
         handleSearch(search);
     }
 
     const handleChange = (event) => {
-        console.log(event.target.value)
         setSearch(event.target.value)
     }
 

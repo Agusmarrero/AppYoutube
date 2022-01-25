@@ -29,18 +29,16 @@ const VideoDetail = ({handleVideoSelect, video }) => {
     return (
         
         <div>
-            {/* <Link to={`/video/${video.id.videoId}`}> */}
                 <div className='embed'>
                     <iframe src={videoSrc} allowFullScreen title='Video player' />
-                </div>
-                <div className='segment'>
+                </div >
+                <div className='col-12 col-c-12 col-x-12 col-s-12'>
                     <h4 className='header'>{videoItem.snippet.title}</h4>
                     <p>{videoItem.snippet.description}</p>
                 </div>
                 <VideoList handleVideoSelect={videoSelect} videos={videosList} />
                 
-                <Footer />
-            {/* </Link> */}
+                {/* <Footer /> */}
         </div>
 
     )

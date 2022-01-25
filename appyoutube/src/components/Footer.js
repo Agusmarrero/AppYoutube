@@ -1,6 +1,6 @@
 import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import './Footer.css';
+import './Home.css';
 import { MDBBtn  } from 'mdb-react-ui-kit';
 import { useVideoContext } from "../context/context"
 import { Link } from 'react-router-dom'
@@ -14,8 +14,8 @@ const Footer = () => {
     }
     return (
         <Link to="/">
-
-            <div className='footer-back navbar navbar-fixed-bottom'>
+            
+            <div className='footer'>
                 <label className='text-secondary'>CANTIDAD DE REPRODUCCIONES: {count}</label>
                 <MDBBtn style={{float:'right' , backgroundColor:'white'}} onClick={() => notVideosList()} color='#ff0303' rounded>ATRÁS</MDBBtn>
             </div>
