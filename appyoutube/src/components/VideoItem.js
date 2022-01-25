@@ -1,13 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import './VideoItem.css';
-import {Link} from 'react-router-dom'
+import './Home.css';
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import { MDBBtn } from 'mdb-react-ui-kit';
-import Footer from './Footer';
 
-
-const VideoItem = ({v1 , handleVideoSelect}) => {
+const VideoItem = ({ v1, handleVideoSelect }) => {
 
     const [description, setDescription] = useState("")
 
@@ -18,26 +15,25 @@ const VideoItem = ({v1 , handleVideoSelect}) => {
         setSelect(!select)
     }
 
- 
+
     return (
         <>
-          
-        <Link to={`/video/${v1.id.videoId}`}>
-            <div onClick={() => handleVideoSelect(v1) } className=' video-item item'>
-                <img className='ui image' src={v1.snippet.thumbnails.medium.url} alt={v1.snippet.description}/>
-                <div className='content'>
-                    <div className='card-title '>{v1.snippet.title}</div>
-                    
+            <Link to={`/video/${v1.id.videoId}`}>
+                <div onClick={() => handleVideoSelect(v1)} className=' video-item item'>
+                    <img className='ui image' src={v1.snippet.thumbnails.medium.url} alt={v1.snippet.description} />
+                    <div className='content'>
+                        <div className='text-title'>{v1.snippet.title}</div>
+
+                    </div>
+                    {select ? <div className='card '>{description}</div> : <div></div>}
                 </div>
-               {select ? <div className='card '>{description}</div> : <div></div>}
+
+            </Link>
+            <div style={{ borderBottom: '2px solid #c6c4c5', paddingBottom: 5, textAlign:'center'}}>
+                {select ?
+                    <Button size="sm" onClick={() => handleDetail()} variant="outline-secondary" >ESCONDER</Button>
+                    : <Button size="sm" onClick={() => handleDetail()} variant="outline-danger">DETALLES</Button>}
             </div>
-           
-        </Link>
-        {select ? 
-            <Button size="sm" onClick={() => handleDetail()} variant="outline-secondary" >ESCONDER</Button>
-         : <Button size="sm" onClick={() => handleDetail()}variant="outline-danger">DETALLES</Button>}
-         
-       
         </>
     )
 };
