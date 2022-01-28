@@ -10,12 +10,13 @@ Para poder visualizar el diseño de la aplicación se realizo un prototipo en Fi
 
 ### LIBRERÍAS :wrench:
 
-REACT-ROUTER-DOM (v6.0.2) Para la realización del proyecto se utilizo la dependencia de react-router-dom, para poder hacer la navegación del mismo.
+REACT-ROUTER-DOM (v6.0.2)        
+Para la realización del proyecto se utilizo la dependencia de react-router-dom, para poder hacer la navegación del mismo.
 
-ESTILO E INTERFAZ
-Se utilizo boostrap (V5) para los estilos de la aplicación, realizando los cambios que se creían convenientes. 
+ESTILO E INTERFAZ  (V5)   
+Se utilizo boostrap para los estilos de la aplicación, realizando los cambios que se creían convenientes. 
 
-YOUTUBE DATA API 
+YOUTUBE DATA API   
 Para poder acceder a la información se utilizo la API de Youtube. De esta manera tenemos todo lo necesario para lo requerido por el problema. 
 
 ### DEMO :arrow_forward:
