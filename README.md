@@ -21,7 +21,7 @@ Para poder acceder a la información se utilizo la API de Youtube. De esta maner
 
 ### DEMO :arrow_forward:
 
-Para visualizar la aplicación se puede entrar [aquí](https://eloquent-turing-7b2684.netlify.app/)
+Para visualizar la aplicación se puede entrar [aquí](https://appyoutubecds.netlify.app/)
 
 ## AUTORA ✒️
 
