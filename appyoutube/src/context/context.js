@@ -5,43 +5,30 @@ const VideoContext = createContext([])
 export const useVideoContext = () => useContext(VideoContext)
 
 function VideoContextProvider({ children }) {
-  
+
     const [videosList, setVideosList] = useState([])
-    
+
     const [videoItem, setVideoItem] = useState([])
-    const [count , setCount] = useState(0)
+    const [count, setCount] = useState(0)
     const [backButton, setBackButton] = useState(false)
-    
+
     const videoSelect = (item) => {
-        
         setVideoItem(item)
         setCount(count + 1)
         setBackButton(false)
     }
 
     const emptyVideo = () => {
-        // setVideoItem([])
-        console.log(videosList)
-        
         setVideosList([])
-        // console.log('Borro todo')
     }
 
     const videosSearch = (item) => {
-        
-            setVideosList([item])
-        // console.log('VIDEO SELECT' + JSON.stringify(item))
+        setVideosList([item])
     }
 
     const notVideosList = () => {
         setBackButton(true)
-        
-        
     }
-
-
-
-
 
     return (
         <VideoContext.Provider value={{
@@ -53,7 +40,7 @@ function VideoContextProvider({ children }) {
             videosSearch,
             notVideosList,
             backButton
-        
+
         }}>
             {children}
         </VideoContext.Provider>

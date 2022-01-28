@@ -1,7 +1,6 @@
 import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import './Home.css';
-import { MDBBtn } from 'mdb-react-ui-kit';
 import { useVideoContext } from "../context/context"
 import { Link } from 'react-router-dom'
 

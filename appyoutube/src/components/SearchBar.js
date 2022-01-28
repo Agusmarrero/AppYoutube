@@ -13,7 +13,6 @@ const SearchBar = ({handleSearch}) => {
         setSearch(event.target.value)
     }
 
-    
     return (
         <div className='search-bar ui '>
             <form className='ui form' style={{ textAlign: 'center' }}>
